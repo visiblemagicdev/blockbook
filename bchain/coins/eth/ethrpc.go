@@ -32,6 +32,9 @@ const (
 	TestNet EthereumNet = 3
 	// TestNetGoerli is Goerli test network
 	TestNetGoerli EthereumNet = 5
+	// Polygon
+	PolygonMainNet EthereumNet = 137
+	PolygonTestNet EthereumNet = 80001
 )
 
 // Configuration represents json config file
@@ -171,6 +174,12 @@ func (b *EthereumRPC) Initialize() error {
 	case TestNetGoerli:
 		b.Testnet = true
 		b.Network = "goerli"
+	case PolygonMainNet:
+		b.Testnet = false
+		b.Network = "polygon"
+	case PolygonTestNet:
+		b.Testnet = true
+		b.Network = "mumbai"
 	default:
 		return errors.Errorf("Unknown network id %v", id)
 	}
