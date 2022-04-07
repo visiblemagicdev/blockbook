@@ -31,6 +31,9 @@ const (
 	TestNet EthereumNet = 3
 	// TestNetGoerli is Goerli test network
 	TestNetGoerli EthereumNet = 5
+	// Polygon
+	PolygonMainNet EthereumNet = 137
+	PolygonTestNet EthereumNet = 80001
 )
 
 // Configuration represents json config file
